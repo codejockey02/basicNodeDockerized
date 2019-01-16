@@ -2,8 +2,10 @@
 FROM node:alpine
 
 #Putting the Dependencies
-COPY ./ ./
+WORKDIR /users/priyesh_saraswat/docker
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 #Running the Command
 CMD ["npm","start"]
